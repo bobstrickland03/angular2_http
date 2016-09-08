@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
-
-import { HeroListComponent } from './toh/hero-list.component';
 import { HeroData } from './hero-data';
 
 import { AppComponent } from './app.component';
+
+import { HeroListComponent } from './toh/hero-list.component';
+import { HeroListPromiseComponent } from './toh/hero-list.component.promise';
+
+import { WikiComponent }      from './wiki/wiki.component';
+import { WikiSmartComponent } from './wiki/wiki-smart.component';
 
 @NgModule({
   imports: [
@@ -18,7 +22,13 @@ import { AppComponent } from './app.component';
     JsonpModule,
     InMemoryWebApiModule.forRoot(HeroData)
   ],
-  declarations: [AppComponent, HeroListComponent],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeroListComponent,
+    HeroListPromiseComponent,
+    WikiComponent,
+    WikiSmartComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

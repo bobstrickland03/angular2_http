@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+
+import { HeroListComponent } from './toh/hero-list.component';
+import { HeroData } from './hero-data';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,9 +15,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    InMemoryWebApiModule.forRoot(HeroData)
   ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [AppComponent, HeroListComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
